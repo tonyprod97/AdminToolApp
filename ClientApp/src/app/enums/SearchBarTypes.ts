@@ -1,0 +1,3 @@
+enum SearchBarTypes {
+  SearchPlusPagination, SearchByDate
+}

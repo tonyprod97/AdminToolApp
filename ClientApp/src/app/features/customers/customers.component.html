@@ -1,0 +1,3 @@
+
+<app-table [(data)]="customers" [columnNames]="columnNames" [propsName]="propsName"
+           (getData)="onGetCustomers($event)" (updateData)="onUpdateCustomer($event)"></app-table>

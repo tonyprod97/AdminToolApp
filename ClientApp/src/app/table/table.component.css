@@ -1,0 +1,14 @@
+#paginationInput {
+  width:90px;
+}
+.opened {
+  border: 1px solid lightgrey;
+  margin: 2px;
+  padding: 10px;
+  border-radius: 5px;
+
+}
+
+td,th {
+  text-align: center;
+}

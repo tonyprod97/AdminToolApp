@@ -1,0 +1,33 @@
+<nav class="navbar navbar-dark bg-info navbar-expand-sm" style="margin-bottom:15px;">
+  <a class="navbar-brand">Admin Tool</a>
+  <button class="navbar-toggler" (click)="onCollapse()" [ngClass]="{'collapsed':!isExpanded}" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="isExpanded" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse" [ngClass]="{'collapse-show':isExpanded,'collapse':!isExpanded}" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" [routerLink]='["/customers"]' [routerLinkActive]='["active"]' [routerLinkActiveOptions]='{ exact: true }'>
+        Customers
+      </a>
+      <a class="nav-item nav-link" [routerLinkActive]='["active"]' [routerLinkActiveOptions]='{ exact: true }' [routerLink]='["/licenses"]'>
+        View Licenses
+      </a>
+      <a class="nav-item nav-link" [routerLink]='["/installed_licenses"]' [routerLinkActive]='["active"]' [routerLinkActiveOptions]='{ exact: true }'>
+        Installed Licenses
+      </a>
+      <a class="nav-item nav-link" [routerLink]='["/maintenance"]' [routerLinkActive]='["active"]' [routerLinkActiveOptions]='{ exact: true }'>
+        Maintaince
+      </a>
+      <a class="nav-item nav-link" [routerLink]='["/create_licence"]' [routerLinkActive]='["active"]' [routerLinkActiveOptions]='{ exact: true }'>
+        Create License
+      </a>
+    </div>
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link" [routerLink]='["/log_in"]' *ngIf="authService.isLoggedIn()" (click)="authService.logout()" [routerLinkActive]='["active"]' [routerLinkActiveOptions]='{ exact: true }'>Log Out</a>
+      <a class="nav-item nav-link" [routerLink]='["/log_in"]' *ngIf="!authService.isLoggedIn()" [routerLinkActive]='["active"]' [routerLinkActiveOptions]='{ exact: true }'>Log In</a>
+      <a class="nav-item nav-link" [routerLink]='["/create_users"]' *ngIf="authService.isLoggedIn() && authService.isAdmin()" [routerLinkActive]='["active"]' [routerLinkActiveOptions]='{ exact: true }'>Create User</a>
+    </div>
+  </div>
+
+
+</nav>
+

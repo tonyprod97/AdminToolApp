@@ -1,0 +1,71 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="license-card" novalidate>
+  <div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-6 form-group">
+              <input type="text" class="form-control" [ngClass]="{'error':form.controls.licenseKey.errors?.required && form.controls.licenseKey.touched}"
+              placeholder="Licence Key" formControlName="licenseKey"/>
+              <span class="error" *ngIf="form.controls.licenseKey.invalid && form.controls.licenseKey.touched">License Key is required!</span>
+            </div>
+
+            <div class="form-group col-sm-6">
+              <input type="text" class="form-control"  [ngClass]="{'error':form.controls.idCustomer.errors?.required && form.controls.idCustomer.touched}"
+               placeholder="Customer Id" formControlName="idCustomer"/>
+              <span class="error" *ngIf="form.controls.idCustomer.invalid && form.controls.idCustomer.touched">Customer Id is required!</span>
+            </div>
+          </div>
+    </div>
+  </div>
+<div class="card">
+  <div class="row card-body">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label class="col-form-label" for="usedLicenses">Used Licenses:</label>
+        <input class="form-control col-sm-6" [ngClass]="{'error':form.controls.usedLicenses.errors?.required && form.controls.usedLicenses.touched}" min="0" type="number" placeholder="0"
+                id="usedLicenses" formControlName="usedLicenses"/>
+                <span class="error" *ngIf="form.controls.usedLicenses.errors?.required && form.controls.usedLicenses.touched">Required!</span>
+      </div>
+            <div class="form-group">
+              <label class="col-form-label" for="totalLicenses">Total Licenses:</label>
+              <input class="form-control col-sm-6" type="number" min="0"  [ngClass]="{'error':form.controls.totalLicenses.errors?.required && form.controls.totalLicenses.touched}"
+                      placeholder="0" id="totalLicenses" formControlName="totalLicenses"/>
+                      <span class="error" *ngIf="form.controls.totalLicenses.errors?.required && form.controls.totalLicenses.touched">Required!</span>
+
+            </div>
+    </div>
+    <div class="col-sm-4 border-left">
+      <div class="form-group">
+        <label class="col-form-label" for="version">Version:</label>
+        <input class="form-control col-sm-6" type="number" min="0"  [ngClass]="{'error':form.controls.version.errors?.required && form.controls.version.touched}"
+              placeholder="0" id="version" formControlName="version">
+              <span class="error" *ngIf="form.controls.version.errors?.required && form.controls.version.touched">Required!</span>
+            </div>
+      <div class="form-group">
+        <label class="col-form-label" for="validUntil" id="validUntilLabel">Valid Until:</label>
+        <input class="form-control col-sm-10" type="date"
+                id="validUntil" formControlName="validUntil">
+      </div>
+      <div class="form-group">
+        <label for="active" class="col-form-label">Active: </label>
+        <select id="active" class="form-control col-sm-6" formControlName="active">
+          <option selected>True</option>
+          <option>False</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-4 border-left">
+        <div class="form-group">
+          <label id="numExpiredLabel" class="col-form-label" for="numExpired">Number of Expired licenses:</label>
+          <input class="form-control col-sm-6" type="number" min="0"
+                  placeholder="0" id="numExpired" formControlName="numExpired">
+        </div>
+        <div class="form-group">
+          <label id="canExtendUntilLabel" class="col-form-label" for="canExtendUntil">Can Extend Until:</label>
+          <input class="form-control col-sm-10" type="date"
+                  id="canExtendUntil" formControlName="canExtendUntil">
+        </div>
+    </div>
+  </div>
+</div>
+  <button type="submit" class="btn btn-success btn-md btn-block" [disabled]="form.invalid || form.pristine">Create</button>
+</form>

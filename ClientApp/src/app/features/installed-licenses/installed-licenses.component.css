@@ -1,0 +1,12 @@
+.search-by-date {
+  background: lightgray;
+  margin: 5px 0px;
+  width:fit-content;
+  border-radius:4px;
+}
+input {
+ margin:-5px 5px;
+}
+label {
+  margin:2px 5px;
+}

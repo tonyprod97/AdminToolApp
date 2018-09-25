@@ -1,0 +1,20 @@
+.fit-middle{
+  text-align: center;
+}
+
+.card {
+  margin: 10px;
+}
+
+
+@media (min-width: 575px){
+  .border-left{
+    border-left: 1px solid lightgrey;
+  }
+}
+
+@media (max-width: 575px) {
+  .border-left {
+    border-top: 1px solid lightgrey;
+  }
+}

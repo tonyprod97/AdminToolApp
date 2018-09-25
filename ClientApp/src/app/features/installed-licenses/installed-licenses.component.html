@@ -1,0 +1,3 @@
+
+<app-table [showDateSearch]="true" (dateSearch)="onSubmit($event)" [(data)]="licenses" [columnNames]="columnNames" [propsName]="propsName"
+           (getData)="onGetLicenses($event)" (updateData)="onUpdateLicenses($event)"></app-table>
